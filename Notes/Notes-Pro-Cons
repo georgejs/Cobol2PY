@@ -1,0 +1,67 @@
+Minimize Cascading Error
+Imporve Typographical error correction.
+Cobol file names can't have spaces
+Cobol file names are limited to 8 chars + .cbl i.e. sentnces.cbl
+Division can be broken into sections which can be broken into paragraphs and then sentences
+Depending on compiler division may or may not be required.
+
+NOTE THE Peirod '.' at the end of each command, this required unless the line cont. on to the next line.
+Always have:
+    IDENTIFICATION DIVISION.
+    ENVIRONMENT DIVISION.
+    DATA DIVISION.
+    PROCEDURE DIVISION.
+
+Also you must also ways have:
+    PROGRAM-ID.
+    STOP RUN.
+
+PROGRAM-ID. falls under IDENTIFICATION DIVISION.
+STOP RUN. falls under PROCEDURE DIVISION.
+
+If using ACUCOBOL the Stop Run must be changed to:
+    ACCEPT OMITTED. STOP RUN.
+
+This program is designed for Cobol-85 and newer, Cobol-76 might come later
+
+Var: Should always be Capitals and
+    Cannot exceed 30 char.
+    Cobol i.e.
+    ...
+    01  ALPHA-CHAR  PICTURE IS XXX
+    ...
+    Make note of the IS key word this is not needed but it can dep on version.
+    if just numerical then
+    ...
+    01  NUM    PICTURE 99
+    ...
+
+    The number of x's det. how long the string can be, it will truncate the rest if more is inputed.
+
+    PICTURE can be abv. as PIC
+    pure numbers max out a 18 digits.
+    alpha-number max out dep. on the version of cobol
+    you can short had digits and alpha-num by using 9(18) X(20)
+    where the number in () is the multiplyer
+
+    01  NUM    PICTURE 9999
+    is the same as
+    01  NUM    PICTURE 9(4)
+
+    01  ALPHA-CHAR  PICTURE IS XXXXXXXX
+    is the same as
+    01  ALPHA-CHAR  PICTURE IS X(8)
+    or
+    01  ALPHA-CHAR  PIC IS X(8)
+
+Move: Relocate values to or overwrite var.
+    MOVE 2 TO VAR
+    MOVE "Stuff" TO VAR-WORD
+
+VAR init: uses VALUE
+    i.e. 01 VAR1 PIC X(10) VALUE "Some Stuff"
+
+Structure:
+    Make sure when you make a fucntion do it after STOP RUN. But it has to be in the PROCEDURE DIVISION
+    Use the PERFORM key word to launch a fuction.
+    
