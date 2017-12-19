@@ -64,4 +64,3 @@ VAR init: uses VALUE
 Structure:
     Make sure when you make a fucntion do it after STOP RUN. But it has to be in the PROCEDURE DIVISION
     Use the PERFORM key word to launch a fuction.
-    
