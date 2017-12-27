@@ -27,6 +27,11 @@ def open_dialog(fd):
     return file_path
 
 def check_col_file(file_start_path):
+    '''
+    Check Cobol File
+    :param file_start_path: file path for a cobol
+    :return:
+    '''
     walk = os.walk(file_start_path)
     col_files = []
     for element in walk:
